@@ -4,7 +4,7 @@ metadata:
   name: nginx
   labels:
     project: roboshop
-    environment:dev
+    environment: dev
 spec:
   selector:
     project: roboshop
