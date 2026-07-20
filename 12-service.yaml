@@ -1,0 +1,30 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx
+  labels:
+    project: roboshop
+    environment:dev
+spec:
+  selector:
+    project: roboshop
+    component: frontend
+    tier: frontend
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 9376
+---
+apiVersion: v1
+kind: Pod 
+metadata: 
+  name: nginx
+  labels:
+     project: roboshop
+     environment: Dev
+     component: frontend
+     tier: frontend
+spec: 
+  containers:
+  - name: nginx
+    image: nginx
